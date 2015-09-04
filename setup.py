@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
     name='django-verbose-logging',
     version='0.0.1',
-    #packages=['django_verbose_logging'],
+    packages=['django_verbose_logging'],
     package_dir={'': 'src'},
     url='https://github.com/TargetHolding/django-verbose-logging',
     license='Apache License 2.0',
