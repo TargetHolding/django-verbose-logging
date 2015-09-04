@@ -8,8 +8,5 @@ setup(
     url='https://github.com/TargetHolding/django-verbose-logging',
     license='Apache License 2.0',
     description='Verbose exception logging for Django',
-    install_requires=[
-        'Django>=1.7',
-        'django-jsonfield>=0.9.13',
-    ]
+    install_requires=['Django>=1.7',]
 )
