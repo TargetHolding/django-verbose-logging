@@ -30,6 +30,8 @@ FRAMES:{% for frame in frames %}
 {% endif %}"""
 
 class Formatter(logging.Formatter):
+	template = None
+	
 	def format(self, record):
 		try:
 			request = record.request
@@ -42,7 +44,7 @@ class Formatter(logging.Formatter):
 			exc_info = (None, record.getMessage(), None)
 
 		reporter = ExceptionReporter(request, is_email=False, *exc_info)
-		t = Template(LOG_TEMPLATE_500, name='Log 500 template')
+		self.template = self.template or Template(LOG_TEMPLATE_500, name='Log 500 template')
 		c = Context(reporter.get_traceback_data(), autoescape=False, use_l10n=False)
 		
 		frames = []
@@ -68,7 +70,7 @@ class Formatter(logging.Formatter):
 			
 			frames.append(frame)
 		
-		formatted = t.render(c)
+		formatted = self.template.render(c)
 		
 		divider = '-' * 80 + '\n'
 
