@@ -1,0 +1,5 @@
+src/django_verbose_logging.egg-info/PKG-INFO
+src/django_verbose_logging.egg-info/SOURCES.txt
+src/django_verbose_logging.egg-info/dependency_links.txt
+src/django_verbose_logging.egg-info/requires.txt
+src/django_verbose_logging.egg-info/top_level.txt
